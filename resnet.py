@@ -16,7 +16,7 @@ class ResNet:
         self.BN_EPSILON = 0.001
         self.WEIGHT_DECAY = 0.0002
         self.batch = 50000
-        self.n_epoch = 100  
+        self.n_epoch = 130  
         self.batch_size = 200
         self.NL = 6
         self.lr_decay = 0.95
@@ -195,7 +195,7 @@ class ResNet:
         
         (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
-        sess = tf.Session()
+        sess = tf.Session(config=self.config)
         sess.run(init)
         
         for n in range(self.n_epoch):         
